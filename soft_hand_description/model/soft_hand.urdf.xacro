@@ -57,6 +57,7 @@
 	<xacro:property name="max_synergy_effort" value="100" />
 	<xacro:property name="synergy_damping" value="0.0" />
 	<xacro:property name="synergy_friction" value="0.0" />
+	<xacro:property name="pi" value="3.14159" />
 
 	<!-- SOFT FINGER model -->
 	<!-- 4 fingers are equal (index, middle, ring, little) -->
@@ -86,13 +87,13 @@
 			</inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/knuckle.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/knuckle.stl" />
 				</geometry>
 				<material name="SoftHand/DarkGrey" />
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/knuckle_collision.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/knuckle_collision.stl" />
 				</geometry>
 			</collision>
 		</link>
@@ -134,13 +135,13 @@
 			</inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/phalanx.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/phalanx.stl" />
 				</geometry>
 				<material name="SoftHand/DarkGrey" />
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/phalanx_collision.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/phalanx_collision.stl" />
 				</geometry>
 			</collision>
 		</link>
@@ -181,13 +182,13 @@
 			</inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/phalanx.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/phalanx.stl" />
 				</geometry>
 				<material name="SoftHand/DarkGrey" />
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/phalanx_collision.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/phalanx_collision.stl" />
 				</geometry>
 			</collision>
 		</link>
@@ -228,13 +229,13 @@
 			</inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/fingertip.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/fingertip.stl" />
 				</geometry>
 				<material name="SoftHand/DarkGrey" />
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/fingertip_collision.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/fingertip_collision.stl" />
 				</geometry>
 			</collision>
 		</link>
@@ -265,13 +266,13 @@
 				</inertial>
 				<visual>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_left.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_left.stl" />
 					</geometry>
 					<material name="SoftHand/DarkGrey" />
 				</visual>
 				<collision>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_left_collision.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_left_collision.stl" />
 					</geometry>
 				</collision>
 			</link>
@@ -309,13 +310,13 @@
 				</inertial>
 				<visual>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_right.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_right.stl" />
 					</geometry>
 					<material name="SoftHand/DarkGrey" />
 				</visual>
 				<collision>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_right_collision.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/thumb_knuckle_right_collision.stl" />
 					</geometry>
 				</collision>
 			</link>
@@ -359,13 +360,13 @@
 			</inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/phalanx.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/phalanx.stl" />
 				</geometry>
 				<material name="SoftHand/DarkGrey" />
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/phalanx_collision.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/phalanx_collision.stl" />
 				</geometry>
 			</collision>
 		</link>
@@ -406,13 +407,13 @@
 			</inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/fingertip.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/fingertip.stl" />
 				</geometry>
 				<material name="SoftHand/DarkGrey" />
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://soft_hand_description/meshes/fingertip_collision.stl" scale=" .001 .001 .001" />
+					<mesh filename="package://soft_hand_description/meshes/fingertip_collision.stl" />
 				</geometry>
 			</collision>
 		</link>
@@ -457,26 +458,26 @@
 			<xacro:if value="${left}">
 				<visual>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/palm_left.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/palm_left.stl" />
 					</geometry>
 					<material name="SoftHand/DarkGrey" />
 				</visual>
 				<collision>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/palm_left_collision.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/palm_left_collision.stl" />
 					</geometry>
 				</collision>
 			</xacro:if>
 			<xacro:unless value="${left}">
 				<visual>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/palm_right.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/palm_right.stl"/>
 					</geometry>
 					<material name="SoftHand/DarkGrey" />
 				</visual>
 				<collision>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/palm_right_collision.stl" scale=" .001 .001 .001" />
+						<mesh filename="package://soft_hand_description/meshes/palm_right_collision.stl" />
 					</geometry>
 				</collision>
 			</xacro:unless>

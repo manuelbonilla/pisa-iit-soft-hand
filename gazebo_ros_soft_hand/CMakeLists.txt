@@ -23,13 +23,13 @@ find_package(catkin REQUIRED COMPONENTS
 # Depend on system install of Gazebo 
 find_package(gazebo REQUIRED)
 find_package(Boost REQUIRED)
-find_package(Eigen3 REQUIRED)
+find_package(Eigen 3 REQUIRED)
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
 include_directories(include
   ${Boost_INCLUDE_DIR}
   ${GAZEBO_INCLUDE_DIRS}
-  ${Eigen_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIR}
   ${catkin_INCLUDE_DIRS}
 )
 

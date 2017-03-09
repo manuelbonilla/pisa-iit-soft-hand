@@ -34,6 +34,7 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************/
 
+
 /* Author: Dave Coleman, Jonathan Bohren
    Desc:   Gazebo plugin for ros_control that allows 'hardware_interfaces' to be plugged in
    using pluginlib
@@ -263,20 +264,25 @@ bool GazeboRosSoftHandPlugin::parseTransmissionsFromURDF(const std::string& urdf
   transmission_interface::TransmissionParser::parse(urdf_string, transmissions_);
 
   std::vector<transmission_interface::TransmissionInfo>::iterator it = transmissions_.begin();
-  for(; it != transmissions_.end(); ) 
+
+  std::vector<transmission_interface::TransmissionInfo> transmissions_local;
+
+  for(auto t:transmissions_ ) 
   {
-    if (it->name_.compare(0,robot_namespace_.length(),robot_namespace_) != 0 )
+    if (t.name_.compare(0,robot_namespace_.length(),robot_namespace_) == 0 )
     {
-      ROS_WARN_STREAM_NAMED("gazebo_ros_soft_hand", "gazebo_ros_soft_hand plugin deleted transmission "
-        << it->name_
-        << " because it is not in the same robotNamespace as this plugin. This might be normal in a multi-robot configuration though.");
-      it = transmissions_.erase(it);
-    }
-    else
-    {
-      ++it;
+      // ROS_WARN_STREAM_NAMED("gazebo_ros_soft_hand", "gazebo_ros_soft_hand plugin deleted transmission "
+        // << t.name_
+        // << " because it is not in the same robotNamespace as this plugin. This might be normal in a multi-robot configuration though.");
+      // it = transmissions_.erase(it);
+    // }
+    // else
+    // {
+      // ++it;
+      transmissions_local.push_back(t);
     }
   }
+  transmissions_ = transmissions_local;
   return true;
 }
 

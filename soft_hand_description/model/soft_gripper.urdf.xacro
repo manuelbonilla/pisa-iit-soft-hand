@@ -100,7 +100,7 @@
 
 		<!-- PROXIMAL PHALANGE -->
 		<joint name="${name}_inner_joint" type="revolute">
-			<origin xyz="0.0 0 0" rpy="0 0 0" />
+			<origin xyz="-0.013 0 0" rpy="0 0 0" />
 			<parent link="${name}_knuckle_link"/>
 			<child link="${name}_fake_link1"/>
 			<axis xyz="0 -1 0" />
@@ -118,7 +118,7 @@
 		</link>
 
 		<joint name="${name}_inner_joint_mimic" type="revolute">
-			<origin xyz="-0.013 0 0" rpy="0 0 0" />
+			<origin xyz="0.013 0 0" rpy="0 0 0" />
 			<parent link="${name}_fake_link1"/>
 			<child link="${name}_proximal_link"/>
 			<axis xyz="0 -1 0" />
@@ -464,7 +464,7 @@
 				</visual>
 				<collision>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/gripper_palm.stl" />
+						<mesh filename="package://soft_hand_description/meshes/gripper_palm_collision.stl" />
 					</geometry>
 				</collision>
 			</xacro:if>
@@ -477,7 +477,7 @@
 				</visual>
 				<collision>
 					<geometry>
-						<mesh filename="package://soft_hand_description/meshes/gripper_palm.stl" />
+						<mesh filename="package://soft_hand_description/meshes/gripper_palm_collision.stl" />
 					</geometry>
 				</collision>
 			</xacro:unless>
